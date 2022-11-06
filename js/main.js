@@ -31,6 +31,12 @@ searchBtn.addEventListener("click", function () {
   footer.style.display = "none";
   row1.classList.remove("d-none");
   row1.classList.add("d-flex");
+  $("nav").animate({ left: "0px" }, 1000);
+  $(navSlider).animate({ width: "0px" }, 1000, function () {
+    navSlider.style.display = "none";
+  });
+  document.querySelector(".slider .icons").style.display = "none";
+  $("#ul").slideUp(500);
 });
 categoryBtn.addEventListener("click", function () {
   s1.style.display = "block";
@@ -42,6 +48,12 @@ categoryBtn.addEventListener("click", function () {
   row1.classList.remove("d-none");
   row1.classList.add("d-flex");
   category();
+  $("nav").animate({ left: "0px" }, 1000);
+  $(navSlider).animate({ width: "0px" }, 1000, function () {
+    navSlider.style.display = "none";
+  });
+  document.querySelector(".slider .icons").style.display = "none";
+  $("#ul").slideUp(500);
 });
 ingrediantsBtn.addEventListener("click", function () {
   s1.style.display = "block";
@@ -53,12 +65,24 @@ ingrediantsBtn.addEventListener("click", function () {
   row3.classList.remove("d-none");
   row3.classList.add("d-flex");
   Ingrediant();
+  $("nav").animate({ left: "0px" }, 1000);
+  $(navSlider).animate({ width: "0px" }, 1000, function () {
+    navSlider.style.display = "none";
+  });
+  document.querySelector(".slider .icons").style.display = "none";
+  $("#ul").slideUp(500);
 });
 ContactUsBtn.addEventListener("click",function (){
     s1.style.display = "none";
     s2.style.display = "none";
     s3.style.display = "none";
     footer.style.display = "block";
+    $("nav").animate({ left: "0px" }, 1000);
+    $(navSlider).animate({ width: "0px" }, 1000, function () {
+      navSlider.style.display = "none";
+    });
+    document.querySelector(".slider .icons").style.display = "none";
+    $("#ul").slideUp(500);
 })
 areaBtn.addEventListener("click",function(){
     s1.style.display = "block";
@@ -68,6 +92,12 @@ areaBtn.addEventListener("click",function(){
     row1.classList.remove("d-none");
     row1.classList.add("d-flex");
     Area()
+    $("nav").animate({ left: "0px" }, 1000);
+    $(navSlider).animate({ width: "0px" }, 1000, function () {
+      navSlider.style.display = "none";
+    });
+    document.querySelector(".slider .icons").style.display = "none";
+    $("#ul").slideUp(500);
 })
 btnSlide.addEventListener("click", function () {
   if (navSlider.style.display == "none") {
@@ -128,7 +158,7 @@ async function FilterByIngrediantsApi(Ingrediant) {
   let finalResult = await response.json();
   return finalResult;
 }
-async function filterByAreaApi(area = "egyptian") {
+async function filterByAreaApi(area ="egyptian") {
   let response = await fetch(
     `https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`
   );
